@@ -3,10 +3,8 @@ import { pedirDatos } from "../../helpers/pedirDatos"
 
 
 
-// recibe componente por parametro
 export const withProductsData = (Component) => {
-    // crear otro componente que retorne el anterior
-    // con la funcionalidad agregada
+
     const WithProductsData = (props) => {
         const [productos, setProductos] = useState([])
         const [loading, setLoading] = useState(true)

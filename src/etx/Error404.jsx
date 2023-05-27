@@ -20,7 +20,7 @@ const Error404 = () => {
             <h1>No se encontró la página solicitada</h1>
             <hr/>
 
-            {/* <Link to={"/"} className="btn btn-primary">Volver</Link> */}
+            
             <h4>Será redireccionado en {timer} segundos....</h4>
         </div>
     )

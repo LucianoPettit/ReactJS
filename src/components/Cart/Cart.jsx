@@ -13,7 +13,7 @@ const Cart = () => {
                 <h2>Tu carrito está vacío</h2>
                 <hr/>
                 <p>Añade un producto a tu carrito</p>
-                <Link to="/" className="btn btn-primary">Añadir Productos</Link>
+                <Link to="/" className="btn btn-primary">Ver Productos</Link>
             </div>
         )
     }

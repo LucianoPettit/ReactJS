@@ -1,8 +1,5 @@
 import { useState } from "react"
 
-
-
-
 const Contacto = () => {
     const [values, setValues] = useState({
         nombre: '',

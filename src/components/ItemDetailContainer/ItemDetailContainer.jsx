@@ -14,9 +14,8 @@ const ItemDetailContainer = () => {
     useEffect(() => {
         setLoading(true)
 
-        // 1.- armo la referencia (sync)
+    
         const docRef = doc(db, "productos", itemId)
-        // 2.- llamo a la ref (async)
         getDoc(docRef)
             .then((doc) => {
                 const _item = {
