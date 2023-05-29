@@ -10,26 +10,18 @@ import * as Yup from 'yup'
 
 
 const schema = Yup.object().shape({
-  
-  nombre: Yup.string()
-    .required("Este campo es requerido")
-    .min(3, "El nombre es muy corto")
-    .max(20, "El nombre es demasiado largo"),
-
-  direccion: Yup.string()
-    .required("Este campo es requerido")
-    .min(6, "La direccion es muy corta")
-    .max(20, "La direccion es demasiado larga"),
-
-  email: Yup.string()
-    .email("El email no es válido")
-    .required("Este campo es requerido"),
-    
-    telefono: Yup.number()
-    .required("Este campo es requerido")
-    .min(3, "El telefono es demasiado corto")
-    .max(25, "El telefono es demasiado largo")
-});
+    nombre: Yup.string()
+                .required("Este campo es requerido")
+                .min(3, "El nombre es muy corto")
+                .max(20, "El nombre es demasiado largo"),
+    direccion: Yup.string()
+                .required("Este campo es requerido")
+                .min(6, "La direccion es muy corta")
+                .max(20, "La direccion es demasiado larga"),
+    email: Yup.string()
+                .email("El email no es válido")
+                .required("Este campo es requerido")
+})
 
 const Checkout = () => {
   const { cart, totalCompra, emptyCart } = useContext(CartContext)
@@ -108,32 +100,28 @@ const Checkout = () => {
           <h2>Checkout</h2>
           <hr/>
 
-          <Formik 
-              initialValues={{
-                  nombre: '',
-                  direccion: '',
-                  email: '',
-                  telefono:''
-                
-              }}
-              validationSchema={schema}
-              onSubmit={generarOrden}
-          >
-              {() => (
-                  <Form>
-                      <Field name="nombre" type="text" className="form-control my-2"/>
-                      <ErrorMessage name="nombre" component={"p"}/>
-                      <Field name="direccion" type="text" className="form-control my-2"/>
-                      <ErrorMessage name="direccion" component={"p"}/>
-                      <Field name="email" type="email" className="form-control my-2"/>
-                      <ErrorMessage name="email" component={"p"}/>
-                      <Field name="telefono" type="number" className="form-control my-2"/>
-                      <ErrorMessage name="telefono" component={"p"}/>
+          <Formik
+                initialValues={{
+                    nombre: '',
+                    direccion: '',
+                    email: ''
+                }}
+                validationSchema={schema}
+                onSubmit={generarOrden}
+            >
+                {() => (
+                    <Form>
+                        <Field name="nombre" type="text" className="form-control my-2"/>
+                        <ErrorMessage name="nombre" component={"p"}/>
+                        <Field name="direccion" type="text" className="form-control my-2"/>
+                        <ErrorMessage name="direccion" component={"p"}/>
+                        <Field name="email" type="email" className="form-control my-2"/>
+                        <ErrorMessage name="email" component={"p"}/>
 
-                      <button className="btn btn-primary" type="submit">Enviar</button>
-                  </Form>
-              )}
-          </Formik>
+                        <button className="btn btn-primary" type="submit">Enviar</button>
+                    </Form>
+                )}
+            </Formik>
 
           
       </div>
